@@ -14,8 +14,4 @@ Installation ->
 6. Run the FastAPI application (uvicorn main:app --reload)
 
 I used the Redisearch module to enable full-text search and vector similarity search capabilities in Redis.
-
-- Hashes: I used Redis hashes to store document content and vector embeddings.
-- Vectors: I used the VECTOR data type provided by Redisearch for similarity search.
-
 Performance enhancing decision(s) -> Thread Pool Executor: I used a thread pool executor to handle document processing in parallel, improving the performance of the upload endpoint.
