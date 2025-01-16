@@ -1,49 +1,21 @@
-Document Vector Search Service
-
-This project is a Python-based backend service that integrates with Redis for storing and querying vector data. The service simulates the functionality of an AI-powered documentation assistant, allowing documents to be uploaded, vectorized, stored, and queried for similarity search.
-
-Setup and Run the Backend Service ->
-
 Prerequisites ->
 Python 3.9+
 Redis with Redisearch module
 
-Installation
+Installation ->
 
-1. Clone the repository:
-   git clone
-   cd freelance
-
-2. Create and activate a virtual environment:
-   python3 -m venv venv
-   source venv/bin/activate
-
-3. Install the dependencies:
-   pip install -r requirements.txt
-
-4. Set up Redis with Redisearch:
-   Follow the instructions on the Redisearch GitHub page to install Redis with Redisearch locally.
-
+1. Clone the repository
+2. Create and activate a virtual environment
+3. Install the dependencies (pip install -r requirements.txt)
+4. Set up Redis with Redisearch
 5. Set environment variables:
    export REDIS_HOST=localhost
    export REDIS_PORT=6379
-
-6. Run the FastAPI application:
-   uvicorn main:app --reload
-
-Redis Modules and Data Structures
-
-Redisearch Module
+6. Run the FastAPI application (uvicorn main:app --reload)
 
 I used the Redisearch module to enable full-text search and vector similarity search capabilities in Redis.
-
-Data Structures
 
 - Hashes: I used Redis hashes to store document content and vector embeddings.
 - Vectors: I used the VECTOR data type provided by Redisearch for similarity search.
 
-Design Decisions
-
-1. Sentence Transformers: We use the sentence-transformers library to generate vector embeddings for documents and queries.
-2. Redisearch: Redisearch is used for its powerful indexing and querying capabilities, which are essential for efficient similarity search.
-3. Thread Pool Executor: We use a thread pool executor to handle document processing in parallel, improving the performance of the upload endpoint.
+Performance enhancing decision(s) -> Thread Pool Executor: I used a thread pool executor to handle document processing in parallel, improving the performance of the upload endpoint.
