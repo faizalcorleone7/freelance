@@ -5,7 +5,7 @@ import uvicorn
 
 load_dotenv()
 
-app = FastAPI(title="Document Vector Search Service")
+app = FastAPI()
 app.include_router(document_router.router)
 
 if __name__ == "__main__":
